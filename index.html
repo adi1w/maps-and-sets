@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAPS AND SETS </title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 class="top">MAPS AND SETS</h1>
+    <h3>Q1.
+
+        Problem:
+        You are given a string (STR) of length N, consisting of only the lower case English alphabet.
+        Your task is to remove all the duplicate occurrences of characters in the string.
+
+        Input:
+        abcadeecfb
+
+        Output:
+        abcdef
+    </h3>
+
+    <p>
+        str = 'abcadeecfb';<br>
+        strArr = str.split('');<br>
+
+        for (let i = 0; i < strArr.length - 1; i++) { for (let j=i + 1; j < strArr.length; j++) { if <br>
+            (strArr[i]==strArr[j]) { strArr.splice(j, 1); j--; } } } console.log(strArr.join(''));  <br>
+        </p>
+
+            <h4>A1.
+                output:- abcdef
+            </h4>
+
+            <br>
+            <br>
+            <br>
+            <hr>
+
+
+            <h3>Q2.
+                Problem:
+                You are given a string (STR) of length N, you have to print the count of all alphabet.(using maps)
+
+                Input:
+                abcadeecfb
+
+                Output:
+                a=2
+                b=2
+                c=2
+                d=1
+                e=2
+                f=1
+            </h3>
+
+            <p>
+                function countAlphabets(str) { <br>
+                const alphabetCounts = new Map(); <br>
+
+                for (const char of str) { <br>
+                if (/[a-zA-Z]/.test(char)) { // Check if the character is an alphabet<br>
+                if (alphabetCounts.has(char)) { <br>
+                alphabetCounts.set(char, alphabetCounts.get(char) + 1);<br>
+                } else { <br>
+                alphabetCounts.set(char, 1); <br>
+                }
+                }<br>
+                }
+
+                return alphabetCounts;<br>
+                }
+
+                const str = "abcadeecfb";<br>
+                const counts = countAlphabets(str); <br> 
+
+                // Print the counts
+                counts.forEach((count, alphabet) => { <br>
+                console.log(`${alphabet}: ${count}`); <br>
+                });
+
+            </p>
+
+
+            <h4>
+             A2.   output:-
+
+                a: 2<br>
+                b: 2<br>
+                c: 2<br>
+                d: 1<br>
+                e: 2<br>
+                f: 1<br>
+
+            </h4>
+
+            <br>
+            <br>
+            <hr>
+
+            <script src="./index.js"></script>
+</body>
+
+</html>
